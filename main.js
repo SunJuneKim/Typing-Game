@@ -6,6 +6,7 @@ const scoreDisplay = document.querySelector('.score');
 const timeDisplay = document.querySelector(".time");
 const button = document.querySelector('.button');
 
+
 let score = 0;
 let time = GAME_TIME;
 let isPlaying = false;
@@ -17,6 +18,8 @@ let checkInterval;
 init();
 
 function init() {
+    
+    score =0;
     buttonChange('게임로딩중...');
     getwords();
     wordInput.addEventListener('input', checkMatch)
@@ -51,7 +54,7 @@ function checkStatus() {
 //단어 불러오기
 function getwords() {
 
-    axios.get('https://random-word-api.herokuapp.com/word?number=100')
+    axios.get('https://random-word-api.herokuapp.com/word?number=10000')
         .then(function (response) {
             // handle success
             console.log(response.data);
@@ -67,7 +70,6 @@ function getwords() {
             console.log(error);
         })
 
-
 }
 //단어일치 체크
 function checkMatch() {
@@ -77,6 +79,7 @@ function checkMatch() {
             return;
         }
         score++;
+        
         scoreDisplay.innerText = score;
         time = GAME_TIME;
         const randomIndex = Math.floor(Math.random() * words.length);
