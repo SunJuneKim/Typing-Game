@@ -14,6 +14,7 @@ body {
     width: 50%;
     margin: 25%;
     border-color: 2px solid #43bb25;
+  
 }
 
 .header {
@@ -31,6 +32,7 @@ body {
     margin-top: 3rem;
     font-size: 80px;
     color: #3b5999;
+  
 
 }
 
@@ -44,11 +46,11 @@ body {
 }
 
 .game-info {
-    margin-top: 2rem;
-    font-size: 0.9rem;
     display: flex;
-    justify-content: space-between;
     width: 200px;
+    margin-top: 2rem;
+    justify-content: space-between;
+    font-size: 0.9rem;
 }
 
 .time {
@@ -64,10 +66,10 @@ body {
     height: 35px;
     background: #3b5999;
     color: #fff;
-    border: none;
     margin-top: 3rem;
-    cursor: pointer;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
 
 }
 

@@ -16,10 +16,12 @@ let checkInterval;
 
 
 init();
+rain();
+
 
 function init() {
     
-    score =0;
+    score=0;
     buttonChange('게임로딩중...');
     getwords();
     wordInput.addEventListener('input', checkMatch)
@@ -44,6 +46,7 @@ function checkStatus() {
      
         buttonChange("게임시작")
         clearInterval(checkInterval)
+        score = 0 ;
     }
 
 }
@@ -101,4 +104,24 @@ function countDown() {
 function buttonChange(text) {
     button.innerText = text;
     text === '게임시작' ? button.classList.remove('loading')  : button.classList.add('loading');
+}
+function rain() {
+    let amount = 100;
+    let body = document.querySelector('body');
+    let i = 0;
+    while (i < amount) {
+        let drop = document.createElement('i');
+
+        let size = Math.random() * 10;
+        let posX = Math.floor(Math.random() * window.innerWidth);
+        let delay = Math.random * -20;
+        let duration = Math.random() * 5;
+
+        drop.style.width = 0.2 + size + 'px';
+        drop.style.left = posX + 'px';
+        drop.style.animationDelay = delay + 's';
+        drop.style.animationDuration = 1 + duration + 's';
+        body.appendChild(drop);
+        i++
+    }
 }
